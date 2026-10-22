@@ -6,16 +6,11 @@ plugins {
 }
 
 def gitHash = {
-    def stdout = new ByteArrayOutputStream()
     try {
-        exec {
-            commandLine 'git', 'rev-parse', '--short', 'HEAD'
-            standardOutput = stdout
-            ignoreExitValue = true
-        }
-        return stdout.toString().trim()
+        def process = ["git", "rev-parse", "--short", "HEAD"].execute()
+        process.waitFor()
+        return process.exitValue() == 0 ? process.text.trim() : "unknown"
     } catch (Exception e) {
-        e.printStackTrace()
         return "unknown"
     }
 }.call()
@@ -100,7 +95,7 @@ java {
 
 jar {
     from("LICENSE") {
-        rename { "${it}_${project.archivesBaseName}" }
+        rename { "${it}_${project.base.archivesName.get()}" }
     }
     archiveClassifier.set("dev")
 }
