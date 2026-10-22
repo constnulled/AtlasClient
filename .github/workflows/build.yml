@@ -65,7 +65,7 @@ jobs:
           echo "VERSION_HASH=$VERSION_HASH" >> $GITHUB_ENV
 
       - name: Upload to GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: ${{ env.JAR_FILE }}
           tag_name: v${{ github.run_number }}
