@@ -113,3 +113,7 @@ remapJar {
     dependsOn(shadowJar)
     inputFile = tasks.shadowJar.archiveFile
 }
+
+tasks.named('sourcesJar') {
+    dependsOn(tasks.named('generateGitProperties'))
+}
