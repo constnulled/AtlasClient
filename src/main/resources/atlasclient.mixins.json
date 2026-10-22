@@ -1,0 +1,35 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.atlasclient.inject.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "api.PayloadTypeRegistryImplMixin",
+    "network.connection.ClientConnection_1Mixin",
+    "network.connection.ClientConnection_2Mixin",
+    "network.handler.DecoderHandlerMixin"
+  ],
+  "client": [
+    "auth.SessionMixin",
+    "chat.ChatInputSuggestorMixin",
+    "etc.ClientPlayerEntityMixin",
+    "gui.PressableWidgetMixin",
+    "gui.InGameHudMixin",
+    "gui.RotatingCubeMapRendererMixin",
+    "gui.screen.ButtonWidgetAccessor",
+    "gui.screen.AddServerScreenMixin",
+    "gui.screen.DirectConnectScreenMixin",
+    "gui.screen.MultiplayerScreenMixin",
+    "gui.screen.ScreenMixin",
+    "gui.screen.TitleScreenMixin",
+    "minecraft.MainMixin",
+    "minecraft.MinecraftClientMixin",
+    "network.connection.ClientConnectionMixin",
+    "network.connection.ClientPlayNetworkHandlerMixin",
+    "network.handler.ClientLoginNetworkHandlerMixin",
+    "network.packet.HandshakeC2SPacketMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

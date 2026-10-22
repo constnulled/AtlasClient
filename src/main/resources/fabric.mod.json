@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "atlasclient",
+  "version": "${git_hash}",
+  "name": "AtlasClient",
+  "description": "Minecraft pentesting client for Fabric.",
+  "authors": [
+    "SpigotRCE"
+  ],
+  "contributors": [
+    "hectograms",
+    "zalgodev",
+    "hydrojava"
+  ],
+  "icon": "assets/atlasclient/textures/icon/icon.png",
+  "contact": {
+    "repo": "https://github.com/Hydrogen-Developments/ParadiseClient-X/",
+    "homepage": "https://paradise-client.net"
+  },
+  "license": "All-Rights-Reserved",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.atlasclient.AtlasClient"
+    ],
+    "main": [
+      "dev.atlasclient.AtlasClient"
+    ]
+  },
+  "mixins": [
+    "atlasclient.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

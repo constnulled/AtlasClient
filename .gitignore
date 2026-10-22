@@ -1,0 +1,6 @@
+/run/
+/.idea/
+/.gradle/
+/build/
+/.settings/
+/chat-server/
